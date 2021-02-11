@@ -1,0 +1,28 @@
+<h1>
+  List of all TODOs
+</h1>
+
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Id</th>
+    </tr>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.id %></td>
+        <td><%= todo.name %></td>
+        <td><%= todo.description %></td>
+        <td><%= link_to 'show', todo_path(todo) %></td>
+        <td><%= link_to 'edit', edit_todo_path(todo) %></td>
+        <td><%= link_to 'delete', todo_path(todo), method: :delete, data: {confirm: 'are you sure'} %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <br>
+  <%= link_to 'create new todo', new_todo_path %>
+</div>
