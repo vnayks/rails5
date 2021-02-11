@@ -1,0 +1,9 @@
+<div>
+  <p>Name: <%= @todo.name %></p>
+  <p>Name: <%= @todo.description %></p>
+</div>
+
+<div>
+  <%= link_to 'edit', edit_todo_path(@todo) %> |
+  <%= link_to 'listings', todos_path %>
+</div>
